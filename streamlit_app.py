@@ -95,6 +95,10 @@ with col1:
     st.write('This is column 1')
 
 
-with st.spinner(text='In progress'):
-    time.sleep(3)
-    st.success('Done')
+st.balloons()
+st.snow()
+st.toast('Mr Stay-Puft')
+st.error('Error message')
+st.warning('Warning message')
+st.info('Info message')
+st.success('Success message')
