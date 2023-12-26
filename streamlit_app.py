@@ -102,3 +102,5 @@ st.error('Error message')
 st.warning('Warning message')
 st.info('Info message')
 st.success('Success message')
+
+st.file_uploader('File uploader')
