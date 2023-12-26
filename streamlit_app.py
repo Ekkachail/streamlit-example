@@ -61,14 +61,10 @@ st.code('for i in range(8): foo()')
 
 # * optional kwarg unsafe_allow_html = True
 
+arr = np.random.normal(1, 1, size=100)
+fig, ax = plt.subplots()
+ax.hist(arr, bins=20)
+
+st.pyplot(fig)
 
 
-
-st.balloons()
-st.snow()
-st.toast('Mr Stay-Puft')
-st.error('Error message')
-st.warning('Warning message')
-st.info('Info message')
-st.success('Success message')
-st.exception(e)
