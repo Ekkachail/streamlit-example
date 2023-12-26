@@ -67,4 +67,4 @@ ax.hist(arr, bins=20)
 
 st.pyplot(fig)
 
-
+st.toast('Mr Stay-Puft')
