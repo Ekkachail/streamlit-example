@@ -95,8 +95,8 @@ with col1:
     st.write('This is column 1')
 
 
-st.balloons()
-st.snow()
+#st.balloons()
+#st.snow()
 st.toast('Mr Stay-Puft')
 st.error('Error message')
 st.warning('Warning message')
