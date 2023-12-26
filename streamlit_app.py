@@ -67,4 +67,8 @@ ax.hist(arr, bins=20)
 
 st.pyplot(fig)
 
-st.toast('Mr Stay-Puft')
+st.button("Reset", type="primary")
+if st.button('Say hello'):
+    st.write('Why hello there')
+else:
+    st.write('Goodbye')
