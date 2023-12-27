@@ -114,6 +114,15 @@ thai_font_path = os.path.join("Sarabun-Regular.ttf")
 
 thai_font_prop = fm.FontProperties(fname=thai_font_path)
 
+
+
+
+
+# Set Thai font for Matplotlib
+for item in ([ax.title, ax.xaxis.label, ax.yaxis.label] +
+             ax.get_xticklabels() + ax.get_yticklabels()):
+    item.set_fontproperties(thai_font_prop)
+
 # Streamlit app
 st.title("Streamlit Matplotlib with Thai Language")
 
@@ -129,11 +138,6 @@ ax.legend()
 
 
 
-
-# Set Thai font for Matplotlib
-for item in ([ax.title, ax.xaxis.label, ax.yaxis.label] +
-             ax.get_xticklabels() + ax.get_yticklabels()):
-    item.set_fontproperties(thai_font_prop)
 
 # Show Matplotlib plot in Streamlit
 st.pyplot(fig)
