@@ -125,6 +125,9 @@ ax.set_xlabel("เวลา (Time)")
 ax.set_ylabel("ค่า (Value)")
 ax.legend()
 
+
+
+
 # Set Thai font for Matplotlib
 for item in ([ax.title, ax.xaxis.label, ax.yaxis.label] +
              ax.get_xticklabels() + ax.get_yticklabels()):
