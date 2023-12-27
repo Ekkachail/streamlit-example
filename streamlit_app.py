@@ -107,5 +107,8 @@ uploaded_file = st.file_uploader('File uploader')
 
 df = pd.read_excel(uploaded_file)  
 
+for i in df:
+    i
+
 
 
