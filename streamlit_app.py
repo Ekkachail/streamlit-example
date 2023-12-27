@@ -121,7 +121,7 @@ st.title("Streamlit Matplotlib with Thai Language")
 fig, ax = plt.subplots()
 
 ax.legend(prop=thai_font_prop)
-ax.plot([1, 2, 3], label="เอกชัย", marker="o")
+ax.plot([1, 2, 3], label="เอกชัย (Thai)", marker="o")
 ax.plot([3, 2, 1], label="หลายศิริกุล", marker="x")
 ax.set_xlabel("เวลา (Time)")
 ax.set_ylabel("ค่า (Value)")
