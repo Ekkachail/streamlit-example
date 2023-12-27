@@ -4,7 +4,7 @@ import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
-
+import os
 
 
 """
@@ -109,8 +109,9 @@ uploaded_file = st.file_uploader('File uploader')
  
 #df = pd.read_excel(uploaded_file)  
 
+script_dir = os.path.dirname(os.path.abspath(__file__))
+thai_font_path = os.path.join("Sarabun-Regular.ttf")
 
-thai_font_path = "/path/to/NotoSansThai-Regular.ttf"  # Replace with the actual path
 thai_font_prop = fm.FontProperties(fname=thai_font_path)
 
 # Streamlit app
