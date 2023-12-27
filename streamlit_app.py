@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
+import matplotlib.font_manager as fm
 
 
 
@@ -105,10 +106,31 @@ st.success('Success message')
 
 uploaded_file = st.file_uploader('File uploader')
 
-df = pd.read_excel(uploaded_file)  
+ 
+#df = pd.read_excel(uploaded_file)  
 
-for i in df:
-    i
+
+thai_font_path = "/path/to/NotoSansThai-Regular.ttf"  # Replace with the actual path
+thai_font_prop = fm.FontProperties(fname=thai_font_path)
+
+# Streamlit app
+st.title("Streamlit Matplotlib with Thai Language")
+
+# Matplotlib plot
+fig, ax = plt.subplots()
+ax.plot([1, 2, 3], label="ก", marker="o")
+ax.plot([3, 2, 1], label="ข", marker="x")
+ax.set_xlabel("เวลา (Time)")
+ax.set_ylabel("ค่า (Value)")
+ax.legend()
+
+# Set Thai font for Matplotlib
+for item in ([ax.title, ax.xaxis.label, ax.yaxis.label] +
+             ax.get_xticklabels() + ax.get_yticklabels()):
+    item.set_fontproperties(thai_font_prop)
+
+# Show Matplotlib plot in Streamlit
+st.pyplot(fig)
 
 
 
