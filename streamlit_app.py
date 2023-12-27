@@ -118,10 +118,6 @@ thai_font_prop = fm.FontProperties(fname=thai_font_path)
 
 
 
-# Set Thai font for Matplotlib
-for item in ([ax.title, ax.xaxis.label, ax.yaxis.label] +
-             ax.get_xticklabels() + ax.get_yticklabels()):
-    item.set_fontproperties(thai_font_prop)
 
 # Streamlit app
 st.title("Streamlit Matplotlib with Thai Language")
@@ -129,7 +125,7 @@ st.title("Streamlit Matplotlib with Thai Language")
 # Matplotlib plot
 fig, ax = plt.subplots()
 
-ax.legend(prop=thai_font_prop)
+
 ax.plot([1, 2, 3], label="เอกชัย (Thai)", marker="o")
 ax.plot([3, 2, 1], label="หลายศิริกุล", marker="x")
 ax.set_xlabel("เวลา (Time)")
@@ -137,6 +133,12 @@ ax.set_ylabel("ค่า (Value)")
 ax.legend()
 
 
+# Set Thai font for Matplotlib
+for item in ([ax.title, ax.xaxis.label, ax.yaxis.label] +
+             ax.get_xticklabels() + ax.get_yticklabels()):
+    item.set_fontproperties(thai_font_prop)
+
+ax.legend(prop=thai_font_prop)
 
 
 # Show Matplotlib plot in Streamlit
