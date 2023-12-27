@@ -103,4 +103,9 @@ st.warning('Warning message')
 st.info('Info message')
 st.success('Success message')
 
-st.file_uploader('File uploader')
+uploaded_file = st.file_uploader('File uploader')
+
+df = pd.read_excel(uploaded_file)  
+
+
+
