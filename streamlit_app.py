@@ -149,6 +149,7 @@ st.pyplot(fig)
 from matplotlib.font_manager import FontProperties
 
 def pie_chart(data, key, digit=2):
+    
     labels = [str(key) for key in data]
     counts = [data[key]['percent'] for key in data]
 
@@ -158,7 +159,9 @@ def pie_chart(data, key, digit=2):
     for text in texts + autotexts:
         text.set_fontproperties(thai_font_prop)
 
-    ax.legend(prop=thai_font_prop)
+    # Move the legend outside the graph
+    ax.legend(wedges, labels, title="Legend", loc="center left", bbox_to_anchor=(1, 0, 0.5, 1), prop=thai_font_prop)
+    
     plt.title(key, fontproperties=thai_font_prop)
 
     st.pyplot(fig)
