@@ -167,7 +167,7 @@ def pie_chart(data, key, digit=2):
 
 # Example usage
 data = {
-    'Category1': {'percent': 30},
+    'เอกชัย': {'percent': 30},
     'Category2': {'percent': 40},
     'Category3': {'percent': 30},
 }
