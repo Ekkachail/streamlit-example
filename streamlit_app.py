@@ -146,3 +146,33 @@ st.pyplot(fig)
 
 
 
+from matplotlib.font_manager import FontProperties
+
+def pie_chart(data, key, digit=2):
+    thai_font_prop = FontProperties(fname=thai_font_path, size=12)
+
+    labels = [str(key) for key in data]
+    counts = [data[key]['percent'] for key in data]
+
+    fig, ax = plt.subplots()
+    ax.pie(counts, labels=labels, autopct=f'%.{digit}f')
+    
+    for item in ([ax.title, ax.xaxis.label, ax.yaxis.label] + ax.get_xticklabels() + ax.get_yticklabels()):
+        item.set_fontproperties(thai_font_prop)
+
+    ax.legend(prop=thai_font_prop)
+    plt.title(key, fontproperties=thai_font_prop)
+
+    st.pyplot(fig)
+
+# Example usage
+data = {
+    'Category1': {'percent': 30},
+    'Category2': {'percent': 40},
+    'Category3': {'percent': 30},
+}
+
+pie_chart(data, 'My Pie Chart')
+
+
+
