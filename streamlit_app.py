@@ -149,12 +149,9 @@ st.pyplot(fig)
 from matplotlib.font_manager import FontProperties
 
 def pie_chart(data, key, digit=2):
-    thai_font_prop = FontProperties(fname=thai_font_path, size=12)
-
     labels = [str(key) for key in data]
     counts = [data[key]['percent'] for key in data]
 
-    fig, ax = plt.subplots()
     fig, ax = plt.subplots()
     wedges, texts, autotexts = ax.pie(counts, labels=labels, autopct=f'%.{digit}f', textprops={'fontproperties': thai_font_prop})
     
@@ -163,6 +160,9 @@ def pie_chart(data, key, digit=2):
 
     ax.legend(prop=thai_font_prop)
     plt.title(key, fontproperties=thai_font_prop)
+
+    st.pyplot(fig)
+
 
 # Example usage
 data = {
