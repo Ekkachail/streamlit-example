@@ -155,15 +155,14 @@ def pie_chart(data, key, digit=2):
     counts = [data[key]['percent'] for key in data]
 
     fig, ax = plt.subplots()
-    ax.pie(counts, labels=labels, autopct=f'%.{digit}f')
+    fig, ax = plt.subplots()
+    wedges, texts, autotexts = ax.pie(counts, labels=labels, autopct=f'%.{digit}f', textprops={'fontproperties': thai_font_prop})
     
-    for item in ([ax.title, ax.xaxis.label, ax.yaxis.label] + ax.get_xticklabels() + ax.get_yticklabels()):
-        item.set_fontproperties(thai_font_prop)
+    for text in texts + autotexts:
+        text.set_fontproperties(thai_font_prop)
 
     ax.legend(prop=thai_font_prop)
     plt.title(key, fontproperties=thai_font_prop)
-
-    st.pyplot(fig)
 
 # Example usage
 data = {
